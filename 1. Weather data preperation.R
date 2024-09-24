@@ -85,7 +85,7 @@ calculate_metrics <- function(df) {
 process_single_data <- function(df, equation) {
   df <- calculate_metrics(df)
   df$PGT20 <- PGT20_prop_ossrr(df, equation)
-  df$PGT20 <- ifelse(dataset$PGT20 < 0, 0, dataset$PGT20)
+  df$PGT20 <- ifelse(df$PGT20 < 0, 0, df$PGT20)
   return(df)
 }
 
